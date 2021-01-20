@@ -1,0 +1,44 @@
+
+<html>
+    
+    <body>
+        <canvas id="canvas" width=1000 height=380 style="background-color:#808080;">
+            
+        </canvas>
+        <button type="button" width=500 height=200 onclick="rotate_ctx();">Rotate Me</button>
+        
+        
+        <script>
+            
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            
+            var ox = canvas.width / 2;
+            var oy = canvas.height / 2;
+            ctx.font = "65px serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+           // ctx.fillStyle = "#FFF";
+          // ctx.fillStyle = "#FF8880";
+            ctx.fillText("", ox, oy);
+            
+            rotate_ctx = function() {
+                // convert degrees to radians with radians = (Math.PI/180)*degrees.
+                ctx.translate(ox, oy);
+                ctx.rotate((Math.PI / 180) * 15);
+                            ctx.font = "55px serif";
+                             ctx.fillStyle = "#FF8880";
+                           
+                            ctx.fillText("Codee Pie", 5, 5);
+                           
+                ctx.translate(-ox, -oy);
+                
+                
+            };
+                            
+        
+        
+            </script>
+        
+    </body>
+</html>
